@@ -1,0 +1,62 @@
+package com.kaisercohen.celular;
+
+/**
+ *
+ * @author Cesar Oliveira Cohen
+ */
+
+public class Celular{
+    
+    private int anoCompra, anoFabricacao;
+    private String nomeProprietario, modeloCelular;
+    
+    public Celular(int anoCompra, int anoFabricacao, String nomeProprietario, String modeloCelular){
+        this.anoCompra = anoCompra;
+        this.anoFabricacao = anoFabricacao;
+        this.nomeProprietario = nomeProprietario;
+        this.modeloCelular = modeloCelular;
+    }
+
+    public int getAnoFabricacao(){
+        return anoFabricacao;
+    }
+
+    public int getAnoCompra(){
+        return anoCompra;
+    }
+
+    public String getNomeProprietario(){
+        return nomeProprietario;
+    }
+
+    public String getModeloCelular(){
+        return modeloCelular;
+    }
+
+    public void setInfoCelular(int anoCompra, int anoFabricacao, String dataNomeProprietario, String modeloCelular){
+        this.anoCompra = anoCompra;
+        this.anoFabricacao = anoFabricacao;
+        this.nomeProprietario = dataNomeProprietario;
+        this.modeloCelular = modeloCelular;
+    }
+    
+    public void getInfoCelular(){
+        System.out.println("\n\nInformacoes Celular:\n\n____________________________________\n\n"
+            +"Nome proprietario - " + getNomeProprietario()
+            + "\nModelo - " + getModeloCelular()
+            + "\nData de Fabricacao - " + getAnoFabricacao()
+            + "\nData de Compra - " + getAnoCompra());
+    }
+
+    public int tempoDeFabricacao(){
+        int tempoFabricacao = 2022 - getAnoFabricacao();
+        
+        if(tempoFabricacao < 8){
+            System.out.println("\nCelular relativamente recente!");
+        }else{
+            System.out.println("\nCelular fora de circulação");
+        }
+        
+        return tempoFabricacao;
+    }
+}
